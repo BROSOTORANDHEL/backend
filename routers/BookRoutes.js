@@ -1,7 +1,9 @@
 import express from "express";
 import { fetchBooks, createBook, editBook, deleteBook } from "../controllers/BookController.js";
+import checkToken from "../middleware/authenticationHandler.js";
 
 const router = express.Router();
+
 
 router.get("/all", fetchBooks);
 router.post("/new", createBook);
